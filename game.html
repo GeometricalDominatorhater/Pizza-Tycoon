@@ -1,0 +1,288 @@
+<style>pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.hll { background-color: #ffffcc }
+.c { color: #3D7B7B; font-style: italic } /* Comment */
+.err { border: 1px solid #FF0000 } /* Error */
+.k { color: #008000; font-weight: bold } /* Keyword */
+.o { color: #666666 } /* Operator */
+.ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+.cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+.cp { color: #9C6500 } /* Comment.Preproc */
+.cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+.c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+.cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+.gd { color: #A00000 } /* Generic.Deleted */
+.ge { font-style: italic } /* Generic.Emph */
+.ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.gr { color: #E40000 } /* Generic.Error */
+.gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.gi { color: #008400 } /* Generic.Inserted */
+.go { color: #717171 } /* Generic.Output */
+.gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.gs { font-weight: bold } /* Generic.Strong */
+.gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.gt { color: #0044DD } /* Generic.Traceback */
+.kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.kp { color: #008000 } /* Keyword.Pseudo */
+.kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.kt { color: #B00040 } /* Keyword.Type */
+.m { color: #666666 } /* Literal.Number */
+.s { color: #BA2121 } /* Literal.String */
+.na { color: #687822 } /* Name.Attribute */
+.nb { color: #008000 } /* Name.Builtin */
+.nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.no { color: #880000 } /* Name.Constant */
+.nd { color: #AA22FF } /* Name.Decorator */
+.ni { color: #717171; font-weight: bold } /* Name.Entity */
+.ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+.nf { color: #0000FF } /* Name.Function */
+.nl { color: #767600 } /* Name.Label */
+.nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.nt { color: #008000; font-weight: bold } /* Name.Tag */
+.nv { color: #19177C } /* Name.Variable */
+.ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.w { color: #bbbbbb } /* Text.Whitespace */
+.mb { color: #666666 } /* Literal.Number.Bin */
+.mf { color: #666666 } /* Literal.Number.Float */
+.mh { color: #666666 } /* Literal.Number.Hex */
+.mi { color: #666666 } /* Literal.Number.Integer */
+.mo { color: #666666 } /* Literal.Number.Oct */
+.sa { color: #BA2121 } /* Literal.String.Affix */
+.sb { color: #BA2121 } /* Literal.String.Backtick */
+.sc { color: #BA2121 } /* Literal.String.Char */
+.dl { color: #BA2121 } /* Literal.String.Delimiter */
+.sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.s2 { color: #BA2121 } /* Literal.String.Double */
+.se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+.sh { color: #BA2121 } /* Literal.String.Heredoc */
+.si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+.sx { color: #008000 } /* Literal.String.Other */
+.sr { color: #A45A77 } /* Literal.String.Regex */
+.s1 { color: #BA2121 } /* Literal.String.Single */
+.ss { color: #19177C } /* Literal.String.Symbol */
+.bp { color: #008000 } /* Name.Builtin.Pseudo */
+.fm { color: #0000FF } /* Name.Function.Magic */
+.vc { color: #19177C } /* Name.Variable.Class */
+.vg { color: #19177C } /* Name.Variable.Global */
+.vi { color: #19177C } /* Name.Variable.Instance */
+.vm { color: #19177C } /* Name.Variable.Magic */
+.il { color: #666666 } /* Literal.Number.Integer.Long */</style>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Welcome to Pizza Tycoon!&quot;</span><span class="p">)</span>
+<span class="n">Customers</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">customertoppings</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">Rating</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">Money</span> <span class="o">=</span> <span class="mi">350</span>
+<span class="n">Waiters</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">Chefs</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">TVs</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">bulk</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">availablechairs</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">satisfiedcustomers</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">Toilets</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">Tables</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">Chairs</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">Cheflist</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">Workerlist</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">Resturaunts</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">Toppings</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">ToppingList</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Pepperoni&quot;</span><span class="p">,</span> <span class="s2">&quot;Bacon&quot;</span><span class="p">,</span> <span class="s2">&quot;Pineapple&quot;</span><span class="p">,</span> <span class="s2">&quot;Mushrooms&quot;</span><span class="p">,</span> <span class="s2">&quot;Sausage&quot;</span><span class="p">,</span> <span class="s2">&quot;Ham&quot;</span><span class="p">,</span> <span class="s2">&quot;Onions&quot;</span><span class="p">,</span> <span class="s2">&quot;Olives&quot;</span><span class="p">]</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+  <span class="n">customertoppings</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">availablechairs</span> <span class="o">=</span> <span class="n">Chairs</span>
+  <span class="n">Workers</span> <span class="o">=</span> <span class="n">Waiters</span> <span class="o">+</span> <span class="n">Chefs</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Money: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">Money</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Workers: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">Workers</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Locations: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">Resturaunts</span><span class="p">))</span>
+  <span class="n">choice1</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What would you like to do: (1) Hire Worker, (2) Buy something, or (3) Upgrade?&quot;</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">choice1</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+    <span class="n">choice2</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Hire a (1) Cook or (2) Waiter?&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">choice2</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+      <span class="n">choice3</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Hire a (1) Chef ($500) or (2) Cook? ($75)&quot;</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">choice3</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">Money</span> <span class="o">&gt;=</span> <span class="mi">500</span><span class="p">:</span>
+          <span class="n">Money</span> <span class="o">=</span> <span class="n">Money</span> <span class="o">-</span> <span class="mi">500</span>
+          <span class="n">Chefs</span> <span class="o">=</span> <span class="n">Chefs</span> <span class="o">+</span> <span class="mi">1</span>
+          <span class="n">Cheflist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Chef&quot;</span><span class="p">)</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Chef hired!&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Not enough money!&quot;</span><span class="p">)</span>
+      <span class="k">elif</span> <span class="n">choice3</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">Money</span> <span class="o">&gt;=</span> <span class="mi">75</span><span class="p">:</span>
+          <span class="n">Money</span> <span class="o">=</span> <span class="n">Money</span> <span class="o">-</span> <span class="mi">75</span>
+          <span class="n">Chefs</span> <span class="o">=</span> <span class="n">Chefs</span> <span class="o">+</span> <span class="mi">1</span>
+          <span class="n">Cheflist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Cook&quot;</span><span class="p">)</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cook hired!&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Not enough money!&quot;</span><span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That is not an option you fool!&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">choice2</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The waiter cost is $10.&quot;</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">Money</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Waiter hired!&quot;</span><span class="p">)</span>
+        <span class="n">Waiters</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">Money</span> <span class="o">-=</span> <span class="mi">10</span>
+        <span class="n">Workerlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;waiter&quot;</span><span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Not enough money!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That is not an option you fool!&quot;</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">choice1</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+    <span class="n">choice4</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Buy a (1) Table ($50), (2) Chair ($10), (3) TV ($200), (4) Toilet ($5) or (5) New location ($10000)?&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">choice4</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">Money</span> <span class="o">&gt;=</span> <span class="mi">50</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Table bought!&quot;</span><span class="p">)</span>
+        <span class="n">Money</span> <span class="o">-=</span> <span class="mi">50</span>
+        <span class="n">Tables</span> <span class="o">+=</span> <span class="mi">1</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Not enough money!&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">choice4</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+      <span class="n">bulk</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many chairs would you like to buy?&quot;</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">Money</span> <span class="o">&gt;=</span> <span class="mi">10</span> <span class="o">*</span> <span class="nb">int</span><span class="p">(</span><span class="n">bulk</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Chair bought!&quot;</span><span class="p">)</span>
+        <span class="n">Money</span> <span class="o">-=</span> <span class="mi">10</span>
+        <span class="n">Chairs</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">bulk</span><span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Not enough money!&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">choice4</span> <span class="o">==</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">Money</span> <span class="o">&gt;=</span> <span class="mi">200</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TV bought!&quot;</span><span class="p">)</span>
+        <span class="n">Money</span> <span class="o">-=</span> <span class="mi">200</span>
+        <span class="n">TVs</span> <span class="o">+=</span> <span class="mi">1</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Not enough money!&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">choice4</span> <span class="o">==</span> <span class="s2">&quot;4&quot;</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">Money</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Toilet bought!&quot;</span><span class="p">)</span>
+        <span class="n">Money</span> <span class="o">-=</span> <span class="mi">5</span>
+        <span class="n">Toilets</span> <span class="o">+=</span> <span class="mi">1</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Not enough money!&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">choice4</span> <span class="o">==</span> <span class="s2">&quot;5&quot;</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">Money</span> <span class="o">&gt;=</span> <span class="mi">10000</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;New location bought!&quot;</span><span class="p">)</span>
+        <span class="n">Money</span> <span class="o">-=</span> <span class="mi">10000</span>
+        <span class="n">Resturaunts</span> <span class="o">+=</span> <span class="mi">1</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You not popular enough to get new resturant.&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quote: Joe&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That is not an option you fool!&quot;</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">choice1</span> <span class="o">==</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span>
+    <span class="n">Workerlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Cheflist</span><span class="p">)</span>
+    <span class="n">choice5</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Who do you want to upgrade? Pick a person on this list: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">Workerlist</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">choice5</span> <span class="o">==</span> <span class="s2">&quot;Chef&quot;</span> <span class="ow">and</span> <span class="s2">&quot;Chef&quot;</span> <span class="ow">in</span> <span class="n">Cheflist</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">Money</span> <span class="o">&gt;=</span> <span class="mi">500</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Chef upgraded!&quot;</span><span class="p">)</span>
+        <span class="n">Cheflist</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;Chef&quot;</span><span class="p">)</span>
+        <span class="n">Cheflist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;World-Class Chef&quot;</span><span class="p">)</span>
+        <span class="n">Money</span> <span class="o">-=</span> <span class="mi">500</span>
+    <span class="k">elif</span> <span class="n">choice5</span> <span class="o">==</span> <span class="s2">&quot;Cook&quot;</span> <span class="ow">and</span> <span class="s2">&quot;Cook&quot;</span> <span class="ow">in</span> <span class="n">Cheflist</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">Money</span> <span class="o">&gt;=</span> <span class="mi">200</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cook upgraded!&quot;</span><span class="p">)</span>
+        <span class="n">Cheflist</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s2">&quot;Cook&quot;</span><span class="p">)</span>
+        <span class="n">Cheflist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Chef&quot;</span><span class="p">)</span>
+        <span class="n">Money</span> <span class="o">-=</span> <span class="mi">200</span>
+    <span class="k">elif</span> <span class="n">choice5</span> <span class="o">==</span> <span class="s2">&quot;Waiter&quot;</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You can&#39;t upgrade a waiter!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You do not have this worker.&quot;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That is not an option you fool!&quot;</span><span class="p">)</span>
+  <span class="n">Customers</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Rating</span> <span class="o">+</span> <span class="n">satisfiedcustomers</span> <span class="o">*</span> <span class="n">Resturaunts</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">Customers</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; customer(s) has arrived!&quot;</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Customers</span><span class="p">):</span>
+    <span class="n">Toppings</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="n">customertoppings</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Toppings</span><span class="p">):</span>
+      <span class="n">customertoppings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">ToppingList</span><span class="p">))</span>
+    <span class="n">Money</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">customertoppings</span><span class="p">)</span> <span class="o">+</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span>
+    <span class="k">if</span> <span class="n">Chairs</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">:</span>
+      <span class="n">Rating</span> <span class="o">+=</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You don&#39;t have enough chairs or tables!&quot;</span><span class="p">)</span>
+      <span class="n">Rating</span> <span class="o">-=</span> <span class="mi">3</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The customer wants &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">customertoppings</span><span class="p">)</span><span class="o">+</span> <span class="s2">&quot; on their pizza.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Customer fed!&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s2">&quot;waiter&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Workerlist</span><span class="p">:</span>
+      <span class="n">Rating</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">Cheflist</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="n">Rating</span> <span class="o">-=</span> <span class="mi">2</span>
+    <span class="k">if</span> <span class="n">Waiters</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">Cheflist</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="s2">&quot;Chef&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Cheflist</span> <span class="ow">and</span> <span class="s2">&quot;World-Class Chef&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Cheflist</span><span class="p">:</span>
+      <span class="n">satisfiedcustomers</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">Waiters</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="s2">&quot;Chef&quot;</span> <span class="ow">in</span> <span class="n">Cheflist</span> <span class="ow">and</span> <span class="s2">&quot;World-Class Chef&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">Cheflist</span><span class="p">:</span>
+      <span class="n">satisfiedcustomers</span> <span class="o">+=</span> <span class="mi">2</span>
+      <span class="n">Money</span> <span class="o">+=</span> <span class="n">TVs</span>
+      <span class="n">Rating</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">Waiters</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="s2">&quot;World-Class Chef&quot;</span> <span class="ow">in</span> <span class="n">Cheflist</span><span class="p">:</span>
+      <span class="n">Money</span> <span class="o">+=</span> <span class="mi">100</span>
+      <span class="n">satisfiedcustomers</span> <span class="o">+=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The customer has paid.&quot;</span><span class="p">)</span>
+    <span class="n">Rating</span> <span class="o">+=</span> <span class="n">Toppings</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">Workerlist</span><span class="p">)</span>
+  <span class="n">Bathrooom</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">Toilets</span><span class="p">)</span>
+  <span class="n">Charge</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;A few people want to visit the restroom. Would you like to charge them? (y/n)&quot;</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">Charge</span> <span class="o">==</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span>
+    <span class="n">Money</span> <span class="o">+=</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Bathrooom</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">Charge</span> <span class="o">==</span> <span class="s2">&quot;n&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You have not charged the people.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;They are happy.&quot;</span><span class="p">)</span>
+    <span class="n">satisfiedcustomers</span> <span class="o">+=</span> <span class="n">Bathrooom</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;That is not an option you fool!&quot;</span><span class="p">)</span>
+  <span class="n">availablechairs</span> <span class="o">=</span> <span class="n">Chairs</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">Customers</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; customers had arrived that day.&quot;</span><span class="p">)</span>
+  
+  <span class="k">if</span> <span class="n">satisfiedcustomers</span> <span class="o">&gt;=</span> <span class="mi">99999999999999999999</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The Universal Resturaunt&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Everybody in the universe has visited this resturaunt. It is the best resturaunt in the universe.&quot;</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">satisfiedcustomers</span> <span class="o">&gt;=</span> <span class="mi">50000000000</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The Galactic Resturaunt&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Everybody in the Milky Way has visited this resturaunt.&quot;</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">satisfiedcustomers</span> <span class="o">&gt;=</span> <span class="mi">20000000000</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The Solar System Resturaunt&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Everybody in the Solar System has visited this resturaunt.&quot;</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">satisfiedcustomers</span> <span class="o">&gt;=</span> <span class="mi">9000000000</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The Globe Resturaunt&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Everybody on Earth has visited this resturaunt!&quot;</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">satisfiedcustomers</span> <span class="o">&gt;=</span> <span class="mi">8000000000</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The World Resturaunt&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Over 95</span><span class="si">% o</span><span class="s2">f people on Earth have visited this resturaunt!&quot;</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">satisfiedcustomers</span> <span class="o">&gt;=</span> <span class="mi">5000000000</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The Hemisphere Resturaunt&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Half the globe has visited this resturaunt!&quot;</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">satisfiedcustomers</span> <span class="o">&gt;=</span> <span class="mi">1000000000</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The Billion Resturaunt&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A billion people have visited this resturaunt!&quot;</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">satisfiedcustomers</span> <span class="o">&gt;=</span> <span class="mi">500000000</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Half a Billion Resturaunt!&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A half billion people have visited this resturaunt!&quot;</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">satisfiedcustomers</span> <span class="o">&gt;=</span> <span class="mi">100000000</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The Hundred Million Resturaunt&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A hundred million people have visited this resturaunt!&quot;</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">satisfiedcustomers</span> <span class="o">&gt;=</span> <span class="mi">5000000</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The USA Resturaunt&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Everybody in the USA has visited this resturaunt!&quot;</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">satisfiedcustomers</span> <span class="o">&gt;=</span> <span class="mi">100000</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The Perfect Resturaunt&quot;</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">satisfiedcustomers</span> <span class="o">&gt;=</span> <span class="mi">50000</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The Great Resturaunt&quot;</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">satisfiedcustomers</span> <span class="o">&gt;=</span> <span class="mi">10000</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The Good Resturaunt&quot;</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">satisfiedcustomers</span> <span class="o">&gt;=</span> <span class="mi">1000</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The Bad Resturaunt&quot;</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">satisfiedcustomers</span> <span class="o">&gt;=</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The Terrible Resturaunt&quot;</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">satisfiedcustomers</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The USA&#39;s Worst Resturaunt&quot;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The World&#39;s Worst Resturaunt&quot;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Welcome to Pizza Tycoon!&quot;</span><span class="p">)</span>
+<span class="c1"># Rest of the code...</span>
+</pre></div>
